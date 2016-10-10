@@ -1,0 +1,24 @@
+#!/usr/bin/python
+import MySQLdb
+
+def mostrar():
+
+	db=MySQLdb.connect(host="localhost",user="root",passwd="64689499",db="conexiondb")
+
+	cursor = db.cursor()
+	recs=cursor.execute("SELECT * FROM maestros")
+	for x in range(recs):
+   		print cursor.fetchone()
+
+
+def insertar():
+
+	db=MySQLdb.connect(host="localhost",user="root",passwd="64689499",db="conexiondb")
+
+
+	cursor = db.cursor()
+	cursor.execute("SELECT * FROM maestros")
+	for row in cursor:
+	   print row
+
+insertar()
